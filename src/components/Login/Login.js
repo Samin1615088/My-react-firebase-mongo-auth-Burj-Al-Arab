@@ -15,8 +15,10 @@ const Login = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const history = useHistory();
     const location = useLocation();
-    console.log(location.state);
-    const { from } = location.state || { form: { pathname: "/" } }
+    console.log('location', location);
+    console.log('history', history);
+    const { from } = location.state || { from: { pathname: "/" } };
+    console.log('{from}', { from });
     const handleGoogleSignIn = () => {
         const provider = new firebase.auth.GoogleAuthProvider();
         firebase.auth()
